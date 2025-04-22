@@ -1,0 +1,9 @@
+.login button{
+    background-color: #0c194c ;
+    color: white;
+    padding: 10px;
+    border: #0c194c;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0px 8px 10px 1px rgba(26, 35, 78, 0.6);
+}

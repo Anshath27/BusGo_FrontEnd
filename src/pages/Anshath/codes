@@ -1,0 +1,197 @@
+/* CSS PAGE OF NEW HOME PAGE
+.homepage {
+  font-family: "Arial", sans-serif;
+  background-color: black;
+}
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.featured-sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.feature-box {
+  width: 90%;
+  max-width: 800px;
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-box:hover {
+  transform: scale(1.05);
+}
+
+.feature-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.feature-box h2,
+.feature-box p {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  .feature-box {
+    height: 250px;
+    font-size: 1.5rem;
+  }
+}
+/*
+
+// JS PAGE OF NEW HOME PAGE
+import React from "react";
+import { useNavigate } from "react-router";
+import HeaderBar from "../../components/HeaderBar/HeaderBar";
+import Footer from "../../components/Footer/Footer";
+import Mobile from "../../components/Mobile/Mobile";
+import BackgroundImage from "../../images/busstand2.jpg";
+import BusScheduleBG from "../../images/bussc.jpg";
+import LostFoundBG from "../../images/busstand2.jpg";
+import PackageTransferBG from "../../images/busstand2.jpg";
+import DelayReportsBG from "../../images/busstand2.jpg";
+
+const sections = [
+  {
+    title: "Bus Schedules",
+    description: "Check real-time bus schedules and routes to plan your travel efficiently.",
+    bgImage: BusScheduleBG,
+    route: "busschedule",
+  },
+  {
+    title: "Lost/Found",
+    description: "Report or find lost items left on the bus and reconnect with your belongings.",
+    bgImage: LostFoundBG,
+    route: "lostandfound",
+  },
+  {
+    title: "Package Transfer",
+    description: "Send or receive packages securely via our trusted bus package transfer service.",
+    bgImage: PackageTransferBG,
+    route: "packagetransfer",
+  },
+  {
+    title: "Delay Reports & Announcements",
+    description: "Stay updated with delay reports and important announcements for your journey.",
+    bgImage: DelayReportsBG,
+    route: "announcementanddelay",
+  },
+];
+
+function HomePage() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="homepage">
+      <HeaderBar />
+      <div
+        className="hero-section"
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${BackgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          color: "white",
+          fontSize: "6rem",
+          fontWeight: "bold",
+          padding: "20px",
+        }}
+      >
+        <h1>Enhancing Your Bus Travel Experience</h1>
+        <p style={{ fontSize: "1.2rem", maxWidth: "800px", marginTop: "10px" }}>
+          Access bus schedules, lost & found, package transfers, and delay reports in one place.
+        </p>
+      </div>
+      
+      <div className="featured-sections">
+        {sections.map((section, index) => (
+          <div
+            key={index}
+            className="feature-box"
+            onClick={() => navigate(section.route)}
+            style={{
+              background: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${section.bgImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              height: "350px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "white",
+              fontSize: "1.8rem",
+              fontWeight: "bold",
+              cursor: "pointer",
+              margin: "20px",
+              borderRadius: "15px",
+              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
+              transition: "transform 0.3s ease-in-out",
+              padding: "20px",
+              textAlign: "center",
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          >
+            <h2 style={{ marginBottom: "10px", fontSize: "1.5rem" }}>{section.title}</h2>
+            <p style={{ fontSize: "1rem", maxWidth: "80%" }}>{section.description}</p>
+          </div>
+        ))}
+      </div>
+      <Mobile />
+      <Footer />
+    </div>
+  );
+}
+
+export default HomePage;
+//

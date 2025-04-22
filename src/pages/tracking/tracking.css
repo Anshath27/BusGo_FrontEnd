@@ -1,0 +1,80 @@
+/* Make the background image cover the entire page */
+.tracking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("../../images/track1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Content container with a transparent white background */
+.content {
+  background: rgba(255, 255, 255, 0.9); /* Light background for readability */
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.p1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.h1 {
+  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.search {
+  margin: 20px 0;
+}
+
+.t1 {
+  width: 100%;
+}
+
+.track-button {
+  margin-top: 15px;
+}
+
+.track {
+  margin-top: 20px;
+}
+
+.location-info {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.last-left-stop, .next-location {
+  margin: 5px 0;
+}
+
+/* Dialog styling */
+.MuiDialog-paper {
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.MuiDialogTitle-root {
+  font-weight: 600;
+  color: #333;
+}
+
+.MuiDialogContent-root {
+  color: #555;
+}

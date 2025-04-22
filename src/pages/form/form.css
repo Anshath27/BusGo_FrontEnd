@@ -1,0 +1,10 @@
+/* Ensure the image doesn't overflow and is centered */
+.img1 {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.fields {
+  margin-top: 10px;
+}
